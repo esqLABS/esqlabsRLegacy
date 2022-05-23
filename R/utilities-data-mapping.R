@@ -177,7 +177,7 @@ plotPopulationQuantiles <- function(dataMapping, ...) {
 #'   individual. If `TRUE`, population simulation results are plotted as
 #'   mid-percentile and lower/upper percentile bands around.
 #' @param ... Any parameter that can be interpreted by the default [plot()] function
-#' @import hash
+#' @import hash esqlabsR
 #' @keywords internal
 plotTimeValues <- function(dataMapping, aggregated, ...) {
   validateIsOfType(dataMapping, "DataMapping")
@@ -389,7 +389,7 @@ plotTimeValues <- function(dataMapping, aggregated, ...) {
 #' @param ... Any parameter that can be interpreted by the default [plot()] function
 #'
 #' @details Observed data points are drawn on the x, simulated values on the y axis.
-#' @import ospsuite
+#' @import ospsuite esqlabsR
 #' @export
 plotPredictedVsObserved <- function(dataMapping, foldDistance = 2, timeDiffThreshold = 10, ...) {
   validateIsOfType(dataMapping, "DataMapping")
