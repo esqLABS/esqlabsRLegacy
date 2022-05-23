@@ -24,11 +24,11 @@ PlotConfiguration <- R6::R6Class(
     #' @field outputFolder Path to the directory where the outputs should be stored.
     outputFolder = NULL,
     #' @field width Width of the resulting plot in cm. If NULL (default), the width is automatically calculated
-    #' using the value esqlabsEnv$widthPerPlotMapping
+    #' using the value esqlabsLegacyEnv$widthPerPlotMapping
     width = NULL,
     #' @field height Height of the resulting plot in cm. If `NULL` (default), the
     #'   height is automatically calculated
-    #' using the value esqlabsEnv$heightPerPlotMapping
+    #' using the value esqlabsLegacyEnv$heightPerPlotMapping
     height = NULL,
     #' @field nrOfCols Number of column in a multi-panel plot. If `NULL`
     #'   (default), the number is calculated automatically to fit all panels

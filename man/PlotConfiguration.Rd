@@ -21,11 +21,11 @@ output. Other values indicate output into a file. A list of supported outputs is
 \item{\code{outputFolder}}{Path to the directory where the outputs should be stored.}
 
 \item{\code{width}}{Width of the resulting plot in cm. If NULL (default), the width is automatically calculated
-using the value esqlabsEnv$widthPerPlotMapping}
+using the value esqlabsLegacyEnv$widthPerPlotMapping}
 
 \item{\code{height}}{Height of the resulting plot in cm. If \code{NULL} (default), the
 height is automatically calculated
-using the value esqlabsEnv$heightPerPlotMapping}
+using the value esqlabsLegacyEnv$heightPerPlotMapping}
 
 \item{\code{nrOfCols}}{Number of column in a multi-panel plot. If \code{NULL}
 (default), the number is calculated automatically to fit all panels

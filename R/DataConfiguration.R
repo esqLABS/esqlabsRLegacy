@@ -22,10 +22,10 @@ DataConfiguration <- R6::R6Class(
       self$dataFile <- dataFile
       self$compoundPropertiesFile <- compoundPropertiesFile
       self$dataSheets <- dataSheets
-      self$columnsToSplitBy <- esqlabsEnv$columnsToSplitDataBy
-      self$XValuesColumn <- esqlabsEnv$XValuesColumn
-      self$YValuesColumn <- esqlabsEnv$YValuesColumn
-      self$YErrorColumn <- esqlabsEnv$YErrorColumn
+      self$columnsToSplitBy <- esqlabsLegacyEnv$columnsToSplitDataBy
+      self$XValuesColumn <- esqlabsLegacyEnv$XValuesColumn
+      self$YValuesColumn <- esqlabsLegacyEnv$YValuesColumn
+      self$YErrorColumn <- esqlabsLegacyEnv$YErrorColumn
     },
 
     #' @field dataFolder Path to the directory where the data file is located
