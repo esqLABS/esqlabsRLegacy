@@ -7,7 +7,7 @@
 DataMapping <- R6::R6Class(
   "DataMapping",
   inherit = Printable,
-  cloneable = FALSE,
+  cloneable = TRUE,
   active = list(
     #' @field xySeries Named list with the `XYData`
     #' that will be plotted. Names are the labels of the `xySeries` objects
