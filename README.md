@@ -24,13 +24,16 @@ The package binaries can be installed from here:
 - ospsuite-r > 10.0
   - https://github.com/Open-Systems-Pharmacology/OSPSuite-R or esqLABS internal
 - R6 (CRAN)
-- readr (CRAN)
 - readxl (CRAN)
 - writexl (CRAN)
 - hash (CRAN)
 - shiny (CRAN)
 - shinyjs (CRAN)
 - vctrs (CRAN)
+- tidyr (CRAN)
+- colorspace (CRAN)
+- ggplot2 (CRAN)
+- purrr (CRAN)
 
 ### For building from source and developing
 
