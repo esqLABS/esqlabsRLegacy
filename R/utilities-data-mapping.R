@@ -19,8 +19,8 @@ plotMultiPanel <- function(dataMappingList, plotConfiguration, ...) {
   nrOfRows <- ceiling(length(dataMappingList) / nrOfCols)
 
   # If no width and height are provided, automatically calculate based on the number of PlotMappings
-  width <- plotConfiguration$width %||% esqlabsEnv$widthPerPlotMapping * nrOfCols
-  height <- plotConfiguration$height %||% esqlabsEnv$heightPerPlotMapping * nrOfRows
+  width <- plotConfiguration$width %||% esqlabsLegacyEnv$widthPerPlotMapping * nrOfCols
+  height <- plotConfiguration$height %||% esqlabsLegacyEnv$heightPerPlotMapping * nrOfRows
 
   openOuptutDevice(plotConfiguration, width, height)
 
