@@ -76,10 +76,6 @@ plotErrorBars <- function(x,
   }
 }
 
-#' Possible entries for the `outputDevice` field of a `PlotConfiguration` object
-#' @export
-GraphicsDevices <- enum(list("PNG"))
-
 #' Possible entries for the `plotType` field of a `DataMapping` object
 #'
 #' @details "IndividualProfile" - simulated results are plotted as time-values
@@ -131,7 +127,7 @@ openOuptutDevice <- function(plotConfiguration, width, height) {
 #' Close output device
 #'
 #' @param plotConfiguration An object of type `PlotConfiguration`
-#' @import ospsuite
+#' @import ospsuite esqlabsR
 #'
 #' @details If the output of the plot is directed to a file, close the device.
 #' @keywords internal
@@ -158,6 +154,7 @@ closeOutputDevice <- function(plotConfiguration) {
 #' Does the plot type contain line?
 #'
 #' @param type String value of argument `type` passed to function `plot()`
+#' @import ospsuite esqlabsR
 #'
 #' @return TRUE if `type` contains "l" or is "b", FALSE otherwise
 #'

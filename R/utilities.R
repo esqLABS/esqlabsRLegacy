@@ -21,3 +21,17 @@ getQuantilesYData <- function(xValues, yValues, quantiles = c(0.05, 0.5, 0.95)) 
 
   return(output)
 }
+
+#' Is a character part of string?
+#'
+#' @param char Character to find in the string
+#' @param string String that should contain the character
+#'
+#' @return TRUE if the `character` is a substring if `string`, FALSE otherwise
+#' @export
+#'
+#' @examples
+#' isCharInString("a", "bsdalk")
+isCharInString <- function(char, string) {
+  any(unlist(strsplit(string, ""), use.names = FALSE) == char)
+}

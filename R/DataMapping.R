@@ -2,7 +2,7 @@
 #' @docType class
 #' @description Mapping of model outputs to observed data
 #' @export
-#' @import ospsuite hash
+#' @import ospsuite hash esqlabsR
 #' @format NULL
 DataMapping <- R6::R6Class(
   "DataMapping",
