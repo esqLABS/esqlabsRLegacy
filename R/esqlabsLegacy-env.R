@@ -38,9 +38,9 @@ esqlabsLegacyEnv$YErrorColumn <- 12
 #' @export
 #'
 #' @examples
-#' getEsqlabsRSetting("packageVersion")
-#' getEsqlabsRSetting("widthPerPlotMapping")
-getEsqlabsLegacyRSetting <- function(settingName) {
+#' getEsqlabsRLegacySetting("packageVersion")
+#' getEsqlabsRLegacySetting("widthPerPlotMapping")
+getEsqlabsRLegacySetting <- function(settingName) {
   if (!(any(names(esqlabsLegacyEnv) == settingName))) {
     stop(messages$errorEsqlabsRSettingNotFound(settingName))
   }
