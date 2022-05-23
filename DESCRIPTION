@@ -9,7 +9,7 @@ Authors@R:
       person("Indrajeet", "Patil", , "patilindrajeet.science@gmail.com", role = "aut",
            comment = c(ORCID = "0000-0003-1995-6531", Twitter = "@patilindrajeets")))
 Maintainer: Pavel Balazki <pavel.balazki@esqlabs.com>
-Description: Utilities package for backward compatibility of esqlbasR version >4.
+Description: Utilities package for backward compatibility of 'esqlabsR' version >4.
 License: GPL-2
 URL: https://github.com/esqLABS/esqlabsRLegacy
 BugReports: https://github.com/esqLABS/esqlabsRLegacy/issues
