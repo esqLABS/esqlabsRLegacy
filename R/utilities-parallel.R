@@ -34,7 +34,7 @@ executeInParallel <- function(fun,
   cl <- makeCluster(nrOfCores)
 
   # Load necessary packages and export the environments
-  tmp <- clusterEvalQ(cl, library(esqlabsR))
+  tmp <- clusterEvalQ(cl, library(esqlabsRLegacy))
   tmp <- clusterExport(cl, exports)
 
   result <- tryCatch(

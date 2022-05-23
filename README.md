@@ -1,11 +1,9 @@
-# esqlabsR
+# esqlabsRLegacy
 
-Utilities functions for modeling and simulation workflows within *esqLABS*.
+This is a legacy version of the esqlabsR package.
+
 
 <!-- badges: start -->
-
-  [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/esqlabs/esqlabsr?branch=develop&svg=true)](https://ci.appveyor.com/project/StephanSchaller/esqlabsr/branch/develop)
-  [![codecov](https://codecov.io/gh/esqlabs/esqlabsr/branch/develop/graph/badge.svg)](https://codecov.io/gh/esqlabs/esqlabsr)
   
 <!-- badges: end -->
 
@@ -47,4 +45,4 @@ The latest version of the package comes as a binary `*.zip` and can be downloade
 
 ## Code of Conduct
 
-  Please note that the esqlabsR project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.
+  Please note that the esqlabsRLegacy project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.

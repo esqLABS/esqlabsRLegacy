@@ -1,5 +1,5 @@
 library(testthat)
-library(esqlabsR)
+library(esqlabsRLegacy)
 library(ospsuite.utils)
 
-test_check("esqlabsR")
+test_check("esqlabsRLegacy")

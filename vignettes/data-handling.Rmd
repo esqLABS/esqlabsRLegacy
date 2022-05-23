@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 ```
 
 ```{r, echo = FALSE, results = "hide", message = FALSE}
-library(esqlabsR)
+library(esqlabsRLegacy)
 ```
 
 This package provides methods for convenient handling of x-y values data (e.g., time-concentration profiles) and organizing these data as objects of the class `XYData`. These objects can be used for direct access to the data, creating figures such as time-values profiles or predicted-vs-observed plots, or calculating residuals between observed and simulated data. Data for creation of an `XYData` object can come from a simulation, an excel file (e.g. observed data), or from array created in R.

@@ -1,14 +1,14 @@
 .getPackageVersion <- function() {
-  version <- getNamespaceVersion("esqlabsR")
+  version <- getNamespaceVersion("esqlabsRLegacy")
   return(version)
 }
 
-# Environment that holds various global variables and settings for the esqlabsR,
+# Environment that holds various global variables and settings for the esqlabsRLegacy,
 # It is not exported and should not be directly manipulated by other packages.
 esqlabsEnv <- new.env(parent = emptyenv())
 
 # name of the package. This will be used to retrieve information on the package at run time
-esqlabsEnv$packageName <- "esqlabsR"
+esqlabsEnv$packageName <- "esqlabsRLegacy"
 
 # Version of the package
 esqlabsEnv$packageVersion <- .getPackageVersion()
@@ -29,7 +29,7 @@ esqlabsEnv$YValuesColumn <- 11
 # Column index for y error values in observed data files
 esqlabsEnv$YErrorColumn <- 12
 
-#' Get the value of a global esqlabsR setting.
+#' Get the value of a global esqlabsRLegacy setting.
 #'
 #' @param settingName String name of the setting
 #'

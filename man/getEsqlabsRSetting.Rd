@@ -2,7 +2,7 @@
 % Please edit documentation in R/esqlabs-env.R
 \name{getEsqlabsRSetting}
 \alias{getEsqlabsRSetting}
-\title{Get the value of a global esqlabsR setting.}
+\title{Get the value of a global esqlabsRLegacy setting.}
 \usage{
 getEsqlabsRSetting(settingName)
 }
@@ -14,7 +14,7 @@ Value of the setting stored in esqlabsEnv. If the setting does not
 exist, an error is thrown.
 }
 \description{
-Get the value of a global esqlabsR setting.
+Get the value of a global esqlabsRLegacy setting.
 }
 \examples{
 getEsqlabsRSetting("packageVersion")

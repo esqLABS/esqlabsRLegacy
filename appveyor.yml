@@ -65,7 +65,7 @@ on_success:
   - Rscript -e "covr::codecov()"
 
 after_test:
-  - ps: copy esqlabsR_*.zip esqlabsR.zip
+  - ps: copy esqlabsRLegacy_*.zip esqlabsRLegacy.zip
 
 on_failure:
   - 7z a failure.zip *.Rcheck\*
@@ -87,5 +87,5 @@ artifacts:
   - path: '\*_*.tar.gz'
     name: Bits
 
-  - path: 'esqlabsR*.zip'
+  - path: 'esqlabsRLegacy*.zip'
     name: Bits

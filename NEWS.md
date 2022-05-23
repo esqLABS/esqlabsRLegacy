@@ -1,4 +1,4 @@
-# esqlabsR 3.0.0
+# esqlabsRLegacy 3.0.0
 
 
 
@@ -24,10 +24,10 @@ NEW FUNCTIONS
 
 - The package gains a new dependency: [`{ospsuite.utils}`](https://www.open-systems-pharmacology.org/OSPSuite.RUtils/).
 
-# esqlabsR 2.0.0
+# esqlabsRLegacy 2.0.0
 
 - Maintenance and bug fixes.
 
-# esqlabsR 1.0.0
+# esqlabsRLegacy 1.0.0
 
 - Initial release of the package.

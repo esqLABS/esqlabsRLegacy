@@ -1,4 +1,4 @@
-url: https://esqlabs.github.io/esqlabsR/
+url: https://esqlabs.github.io/esqlabsRLegacy/
 
 template:
   bootstrap: 5
@@ -6,7 +6,7 @@ template:
 authors:
   esqLABS GmbH:
     href: "https://esqlabs.com/"
-    html: "<img src='https://esqlabs.github.io/esqlabsR/reference/figures/esqlabs.png' height=24>"
+    html: "<img src='https://esqlabs.github.io/esqlabsRLegacy/reference/figures/esqlabs.png' height=24>"
   Indrajeet Patil:
     href: https://sites.google.com/site/indrajeetspatilmorality/
 

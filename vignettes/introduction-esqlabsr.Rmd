@@ -1,11 +1,11 @@
 ---
-title: "Introduction to esqlabsR"
+title: "Introduction to esqlabsRLegacy"
 output: 
   rmarkdown::html_vignette:
     toc: true
 #output: pdf_document
 vignette: >
-  %\VignetteIndexEntry{Introduction to esqlabsR}
+  %\VignetteIndexEntry{Introduction to esqlabsRLegacy}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-The **`{esqlabsR}`** R-package is designed to facilitate and standardize **modeling and simulation (M&S)** activities performed in the R environment. The main focus of the package lies on providing standard workflows for running simulations with the [Open Systems Pharmacology](http://www.open-systems-pharmacology.org/) Software (OSPS) [R package](https://github.com/Open-Systems-Pharmacology/OSPSuite-R) `{ospsuite}` and creating standardized figures.
+The **`{esqlabsRLegacy}`** R-package is designed to facilitate and standardize **modeling and simulation (M&S)** activities performed in the R environment. The main focus of the package lies on providing standard workflows for running simulations with the [Open Systems Pharmacology](http://www.open-systems-pharmacology.org/) Software (OSPS) [R package](https://github.com/Open-Systems-Pharmacology/OSPSuite-R) `{ospsuite}` and creating standardized figures.
 
 ## General information
 
@@ -35,7 +35,7 @@ The documentation is divided into three parts covering the following aspects:
 
 ## Object-oriented approach
 
-The `{esqlabsR}` package utilizes the concept of object-oriented (OO) programming based on the [R6 system](https://adv-r.hadley.nz/r6.html). While the philosophy of the package is to offer a functional programming workflow more common for the R users, it is important to understand some basic concepts of the OO programming. Many of the functions implemented in `{esqlabsR}` return an *instance* (or an *object*) of a *class*. These objects can be used as inputs for other methods. Additionally, each object offers a set of properties (which can be other objects) and methods, which are accessible by the `$` sign:
+The `{esqlabsRLegacy}` package utilizes the concept of object-oriented (OO) programming based on the [R6 system](https://adv-r.hadley.nz/r6.html). While the philosophy of the package is to offer a functional programming workflow more common for the R users, it is important to understand some basic concepts of the OO programming. Many of the functions implemented in `{esqlabsRLegacy}` return an *instance* (or an *object*) of a *class*. These objects can be used as inputs for other methods. Additionally, each object offers a set of properties (which can be other objects) and methods, which are accessible by the `$` sign:
 
 ```r
 # create an instance of an object

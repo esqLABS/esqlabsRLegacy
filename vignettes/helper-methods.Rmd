@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 ```
 
 ```{r, echo = FALSE, results = "hide", message = F}
-library(esqlabsR)
+library(esqlabsRLegacy)
 ```
 
 ## Introduction
@@ -24,7 +24,7 @@ library(esqlabsR)
 This section given an overview on various helper utilities methods implemented in the package.
 
   : `getEsqlabsRSetting(settingName)`
-    : `esqlabsR` uses a set of default settings that can be accessed with `getEsqlabsRSetting(settingName)`
+    : `esqlabsRLegacy` uses a set of default settings that can be accessed with `getEsqlabsRSetting(settingName)`
     
 ```{r getEsqlabsRSetting, error=TRUE}
 getEsqlabsRSetting("widthPerPlotMapping")

@@ -296,7 +296,7 @@ results2 <- sensitivityCalculation(
   pkParameters = NULL
 )
 
-pkDataWide <- esqlabsR:::.convertToWide(results2$pkData)
+pkDataWide <- esqlabsRLegacy:::.convertToWide(results2$pkData)
 
 test_that("sensitivityCalculation PK parameters datafram dimensions are as expected", {
   expect_equal(dim(pkDataWide), c(12L, 56L))
@@ -327,7 +327,7 @@ test_that("sensitivityCalculation PK parameters wide datafram column names and o
 
 test_that("sensitivityCalculation time series dataframe is as expected", {
   # also extract and add time series data for testing
-  results$tsData <- esqlabsR:::.simulationResultsBatchToTimeSeriesDataFrame(
+  results$tsData <- esqlabsRLegacy:::.simulationResultsBatchToTimeSeriesDataFrame(
     simulationResultsBatch = results$simulationResults,
     parameterPaths = results$parameterPaths,
     outputPaths = results$outputPaths
