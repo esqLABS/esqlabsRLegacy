@@ -18,15 +18,25 @@ reference:
       - matches("^Data")
       - XYData
       - PlotConfiguration
+      - Plotable
 
   - title: Helper functions for plotting
     #desc:
     contents:
       - matches("^plot")
+      - GraphicsDevices
+      - PlotTypes
+
+  - title: Validation helpers
+    #desc:
+    contents:
+      - matches("^validate")
 
   - title: Miscellaneous helper functions
     #desc:
     contents:
       - matches("^read")
       - matches("^get")
+      - calculateRMSE
+      - XYDataTypes
 
