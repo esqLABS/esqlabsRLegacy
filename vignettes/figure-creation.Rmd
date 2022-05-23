@@ -38,11 +38,13 @@ In the next step, the mapping is populated with xy-values series that can be org
 Create a data configuration that describes where to find data and which sheets to load and load the data:
 
 ```{r loadData}
-dataConfiguration <- DataConfiguration$new(dataFolder = file.path(getwd(), "..", "tests", "data"),
-                                    dataFile = "CompiledDataSet.xlsx",
-                                    compoundPropertiesFile = "Compound_Properties.xlsx",
-                                    dataSheets = c("Stevens_2012_placebo"))
-  observedData <- readOSPSTimeValues(dataConfiguration)
+dataConfiguration <- DataConfiguration$new(
+  dataFolder = file.path(getwd(), "..", "tests", "data"),
+  dataFile = "CompiledDataSet.xlsx",
+  compoundPropertiesFile = "Compound_Properties.xlsx",
+  dataSheets = c("Stevens_2012_placebo")
+)
+observedData <- readOSPSTimeValues(dataConfiguration)
 ```
 
 Add loaded data to `DataMapping`
@@ -50,17 +52,20 @@ Add loaded data to `DataMapping`
 ```{r addObsDataToMapping}
 dataMapping <- DataMapping$new()
 
-  dataMapping$addXYData(
-    list(observedData$Stevens_2012_placebo$Placebo_distal,
-         observedData$Stevens_2012_placebo$Placebo_proximal,
-         observedData$Stevens_2012_placebo$Placebo_total),
-    groups =     list("Stevens 2012 solid distal",
-                      "Stevens 2012 solid proximal",
-                      "Stevens 2012 solid total"
-    )
+dataMapping$addXYData(
+  list(
+    observedData$Stevens_2012_placebo$Placebo_distal,
+    observedData$Stevens_2012_placebo$Placebo_proximal,
+    observedData$Stevens_2012_placebo$Placebo_total
+  ),
+  groups = list(
+    "Stevens 2012 solid distal",
+    "Stevens 2012 solid proximal",
+    "Stevens 2012 solid total"
   )
-  
-  dataMapping$plot()
+)
+
+dataMapping$plot()
 ```
 
 !!! It is not possible to change the labels of data in the legend after the data have been added to the mapping because the data are references in the mapping by their label. Changing the label of a `XYData`-object will lead to the problem that it will not be found by `DataMapping` any more. If required, a method of `DataMapping` must be implemented `setLabel(oldLabel, newLabel)`. It will change the label of the `XYData`-object but also the corresponding name in the list of `DataMapping`. Check should be performed that a new label is not used already. Not feasable to implement before switching to TLF.
@@ -68,11 +73,11 @@ dataMapping <- DataMapping$new()
 It is possible to change the axis labels and figure title.
 
 ```{r changeAxisAndTitle}
-  dataMapping$xLab <- "Time [min]"
-  dataMapping$yLab <- "Gastric retention [%]"
-  dataMapping$title <- "Stevens 2012"
-  
-  dataMapping$plot()
+dataMapping$xLab <- "Time [min]"
+dataMapping$yLab <- "Gastric retention [%]"
+dataMapping$title <- "Stevens 2012"
+
+dataMapping$plot()
 ```
 
 Add simulation results to the mapping. For this example, the results have been saved as csv and are loaded. Simulation results are assigned to the respective 
@@ -82,18 +87,21 @@ groups and therefore have same colors as observed data of the same group.
 sim <- loadSimulation(file.path(getwd(), "..", "tests", "data", "Stevens_2012_placebo_indiv_results.pkml"))
 simResults <- importResultsFromCSV(simulation = sim, filePaths = file.path(getwd(), "..", "tests", "data", "Stevens_2012_placebo_indiv_results.csv"))
 
-  dataMapping$addModelOutputs(
-    paths = list("Organism|Lumen|Stomach|Metformin|Gastric retention",
-                 "Organism|Lumen|Stomach|Metformin|Gastric retention distal", 
-                 "Organism|Lumen|Stomach|Metformin|Gastric retention proximal"), 
-    simulationResults = simResults,
-    list("Stevens_2012_placebo solid total sim",
-         "Stevens_2012_placebo solid distal sim",
-         "Stevens_2012_placebo solid proximal sim"
-    )
+dataMapping$addModelOutputs(
+  paths = list(
+    "Organism|Lumen|Stomach|Metformin|Gastric retention",
+    "Organism|Lumen|Stomach|Metformin|Gastric retention distal",
+    "Organism|Lumen|Stomach|Metformin|Gastric retention proximal"
+  ),
+  simulationResults = simResults,
+  list(
+    "Stevens_2012_placebo solid total sim",
+    "Stevens_2012_placebo solid distal sim",
+    "Stevens_2012_placebo solid proximal sim"
   )
-  
-  dataMapping$plot()
+)
+
+dataMapping$plot()
 ```
 
 Add simulation results to the mapping, assigning to the correct groups. Simulation results are now
@@ -101,22 +109,26 @@ have same colors as observed data of the same group. As the labels of the assign
 assigned in the previous steps, the previous sets are overwritten.
 
 ```{r addSimResultsToMappingAndGrouping}
-  dataMapping$addModelOutputs(
-    paths = list("Organism|Lumen|Stomach|Metformin|Gastric retention",
-                 "Organism|Lumen|Stomach|Metformin|Gastric retention distal", 
-                 "Organism|Lumen|Stomach|Metformin|Gastric retention proximal"), 
-    simulationResults = simResults,
-    list("Stevens_2012_placebo solid total sim",
-         "Stevens_2012_placebo solid distal sim",
-         "Stevens_2012_placebo solid proximal sim"
-    ),
-    groups =     list("Stevens 2012 solid total",
-                      "Stevens 2012 solid distal",
-                      "Stevens 2012 solid proximal"
-    )
+dataMapping$addModelOutputs(
+  paths = list(
+    "Organism|Lumen|Stomach|Metformin|Gastric retention",
+    "Organism|Lumen|Stomach|Metformin|Gastric retention distal",
+    "Organism|Lumen|Stomach|Metformin|Gastric retention proximal"
+  ),
+  simulationResults = simResults,
+  list(
+    "Stevens_2012_placebo solid total sim",
+    "Stevens_2012_placebo solid distal sim",
+    "Stevens_2012_placebo solid proximal sim"
+  ),
+  groups = list(
+    "Stevens 2012 solid total",
+    "Stevens 2012 solid distal",
+    "Stevens 2012 solid proximal"
   )
-  
-  dataMapping$plot()
+)
+
+dataMapping$plot()
 ```
 
 It is possible to change the units of the axis. Mind that axis labels are not automatically adjusted. It could be implemented that the default label (if not set by user) is always `Dimension [unit]`
@@ -167,20 +179,20 @@ Setting factors and offset
 ```{r setConfiguration}
 labels <- names(dataMapping$xySeries)
 
-  configuration <- DataMappingConfiguration$new()
-  configuration$setXFactors(labels = c(labels[[1]], labels[[2]]), xFactors = c(2, 0))
-  configuration$setYFactors(labels = c(labels[[1]], labels[[2]]), yFactors = c(3, 2))
-  configuration$setXOffsets(labels = c(labels[[1]], labels[[2]]), xOffsets = c(3, 2))
-  configuration$setYOffsets(labels = c(labels[[1]], labels[[2]]), yOffsets = c(3, 2))
-  
-  dataMapping$setConfiguration(dataMappingConfiguration = configuration)
-dataMapping$plot()  
+configuration <- DataMappingConfiguration$new()
+configuration$setXFactors(labels = c(labels[[1]], labels[[2]]), xFactors = c(2, 0))
+configuration$setYFactors(labels = c(labels[[1]], labels[[2]]), yFactors = c(3, 2))
+configuration$setXOffsets(labels = c(labels[[1]], labels[[2]]), xOffsets = c(3, 2))
+configuration$setYOffsets(labels = c(labels[[1]], labels[[2]]), yOffsets = c(3, 2))
+
+dataMapping$setConfiguration(dataMappingConfiguration = configuration)
+dataMapping$plot()
 ```
 Change axes scale to log
 
 ```{r setYAxisToLog}
 dataMapping$log <- "y"
-dataMapping$plot()  
+dataMapping$plot()
 ```
 
 If results of a population simulation are available, these can be plotted as mean +- 
@@ -189,37 +201,44 @@ percentile intervals.
 ```{r loadAndPlotPopSim}
 dataMappingPop <- DataMapping$new()
 
-  dataMappingPop$addXYData(
-    list(observedData$Stevens_2012_placebo$Placebo_distal,
-         observedData$Stevens_2012_placebo$Placebo_proximal,
-         observedData$Stevens_2012_placebo$Placebo_total),
-    groups =     list("Stevens 2012 solid distal",
-                      "Stevens 2012 solid proximal",
-                      "Stevens 2012 solid total"
-    )
+dataMappingPop$addXYData(
+  list(
+    observedData$Stevens_2012_placebo$Placebo_distal,
+    observedData$Stevens_2012_placebo$Placebo_proximal,
+    observedData$Stevens_2012_placebo$Placebo_total
+  ),
+  groups = list(
+    "Stevens 2012 solid distal",
+    "Stevens 2012 solid proximal",
+    "Stevens 2012 solid total"
   )
-  
+)
+
 sim <- loadSimulation(file.path(getwd(), "..", "tests", "data", "Stevens_2012_placebo_indiv_results.pkml"))
 popResults <- importResultsFromCSV(simulation = sim, filePaths = file.path(getwd(), "..", "tests", "data", "Stevens_2012_placebo_pop_results.csv"))
 
-   dataMappingPop$addModelOutputs(
-    paths = list("Organism|Lumen|Stomach|Metformin|Gastric retention",
-                 "Organism|Lumen|Stomach|Metformin|Gastric retention distal", 
-                 "Organism|Lumen|Stomach|Metformin|Gastric retention proximal"),
-    simulationResults = popResults,
-    labels = list("Stevens_2012_placebo solid total sim",
-         "Stevens_2012_placebo solid distal sim",
-         "Stevens_2012_placebo solid proximal sim"
-    ),
-        groups =     list("Stevens 2012 solid total",
-                      "Stevens 2012 solid distal",
-                      "Stevens 2012 solid proximal"
-    )
+dataMappingPop$addModelOutputs(
+  paths = list(
+    "Organism|Lumen|Stomach|Metformin|Gastric retention",
+    "Organism|Lumen|Stomach|Metformin|Gastric retention distal",
+    "Organism|Lumen|Stomach|Metformin|Gastric retention proximal"
+  ),
+  simulationResults = popResults,
+  labels = list(
+    "Stevens_2012_placebo solid total sim",
+    "Stevens_2012_placebo solid distal sim",
+    "Stevens_2012_placebo solid proximal sim"
+  ),
+  groups = list(
+    "Stevens 2012 solid total",
+    "Stevens 2012 solid distal",
+    "Stevens 2012 solid proximal"
   )
-   
-   dataMappingPop$plotType <- PlotTypes$PopulationQuantiles
-  
-  dataMappingPop$plot()
+)
+
+dataMappingPop$plotType <- PlotTypes$PopulationQuantiles
+
+dataMappingPop$plot()
 ```
 
 
@@ -228,14 +247,16 @@ function. This function requires a `PlotConfiguration` that allows more control
 over the output.
 
 ```{r createPlotConfiguration}
-  plotConfiguration <- PlotConfiguration$new()
-  plotConfiguration$outputName <- "Gastric emptying solid meal"
-  plotConfiguration$addTitle <- TRUE
+plotConfiguration <- PlotConfiguration$new()
+plotConfiguration$outputName <- "Gastric emptying solid meal"
+plotConfiguration$addTitle <- TRUE
 ```
 
 Plot the four data mappings together
 
 ```{r plotMultiPanel, fig.width = 12, fig.height = 12}
-plotMultiPanel(dataMappingList = list(dataMapping, dataMappingPvO, dataMappingBoxPlot, dataMappingPop),
-               plotConfiguration = plotConfiguration)
+plotMultiPanel(
+  dataMappingList = list(dataMapping, dataMappingPvO, dataMappingBoxPlot, dataMappingPop),
+  plotConfiguration = plotConfiguration
+)
 ```
