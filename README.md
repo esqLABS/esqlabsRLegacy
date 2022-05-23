@@ -1,7 +1,12 @@
 # esqlabsRLegacy
 
-This is a legacy version of the esqlabsR package.
+This is a legacy or superseded version of the *esqlabsR* package.
 
+This means that this package will not receive any new features, but will receive any critical bug fixes needed to keep it working.
+
+The version of the *esqlabsR* package under active development can be found here:
+
+<https://github.com/esqLABS/esqlabsR>
 
 <!-- badges: start -->
   
@@ -9,8 +14,8 @@ This is a legacy version of the esqlabsR package.
 
 ## Installation
 
-The latest version of the package comes as a binary `*.zip` and can be downloaded from here (the `.zip` folder under `Artifacts` panel):
-<https://ci.appveyor.com/project/StephanSchaller/esqlabsr/build/artifacts>
+The package binaries can be installed from here:
+<https://github.com/esqLABS/esqlabsRLegacy/releases>
 
 ## Required packages
 

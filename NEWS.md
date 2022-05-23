@@ -1,24 +1,22 @@
 # esqlabsRLegacy 3.0.0
 
-
-
 NEW FUNCTIONS
 
 - To carry out and visualize sensitivity analysis:
 
-* `sensitivityCalculation()`
-* `sensitivitySpiderPlot()`
-* `sensivitityTimeProfiles()`
+  * `sensitivityCalculation()`
+  * `sensitivitySpiderPlot()`
+  * `sensivitityTimeProfiles()`
 
 - Classes and functions for standard esqLABS simulation workflow:
 
-* `ProjectConfiguration`
-* `ScenarioConfiguration`
-* `createDefaultProjectConfiguration()`
-* `readScenarioConfigurationFromExcel()`
-* `setApplications()`
-* `initializeScenario()`
-* `initializeScenario()`
+  * `ProjectConfiguration`
+  * `ScenarioConfiguration`
+  * `createDefaultProjectConfiguration()`
+  * `readScenarioConfigurationFromExcel()`
+  * `setApplications()`
+  * `initializeScenario()`
+  * `initializeScenario()`
 
 - Maintenance and bug fixes.
 
