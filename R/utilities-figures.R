@@ -76,10 +76,6 @@ plotErrorBars <- function(x,
   }
 }
 
-#' Possible entries for the `outputDevice` field of a `PlotConfiguration` object
-#' @export
-GraphicsDevices <- enum(list("PNG"))
-
 #' Possible entries for the `plotType` field of a `DataMapping` object
 #'
 #' @details "IndividualProfile" - simulated results are plotted as time-values
