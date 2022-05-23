@@ -24,7 +24,6 @@ reference:
     #desc:
     contents:
       - matches("^plot")
-      - GraphicsDevices
       - PlotTypes
 
   - title: Validation helpers
@@ -35,8 +34,7 @@ reference:
   - title: Miscellaneous helper functions
     #desc:
     contents:
-      - matches("^read")
-      - matches("^get")
+      - matches("^read|^get|^is")
       - calculateRMSE
       - XYDataTypes
 
