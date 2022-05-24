@@ -2,12 +2,12 @@
 #' @docType class
 #' @description Mapping of model outputs to observed data
 #' @export
-#' @import ospsuite hash
+#' @import ospsuite hash esqlabsR
 #' @format NULL
 DataMapping <- R6::R6Class(
   "DataMapping",
   inherit = Printable,
-  cloneable = FALSE,
+  cloneable = TRUE,
   active = list(
     #' @field xySeries Named list with the `XYData`
     #' that will be plotted. Names are the labels of the `xySeries` objects

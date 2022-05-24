@@ -19,8 +19,8 @@ plotMultiPanel <- function(dataMappingList, plotConfiguration, ...) {
   nrOfRows <- ceiling(length(dataMappingList) / nrOfCols)
 
   # If no width and height are provided, automatically calculate based on the number of PlotMappings
-  width <- plotConfiguration$width %||% esqlabsEnv$widthPerPlotMapping * nrOfCols
-  height <- plotConfiguration$height %||% esqlabsEnv$heightPerPlotMapping * nrOfRows
+  width <- plotConfiguration$width %||% esqlabsLegacyEnv$widthPerPlotMapping * nrOfCols
+  height <- plotConfiguration$height %||% esqlabsLegacyEnv$heightPerPlotMapping * nrOfRows
 
   openOuptutDevice(plotConfiguration, width, height)
 
@@ -177,7 +177,7 @@ plotPopulationQuantiles <- function(dataMapping, ...) {
 #'   individual. If `TRUE`, population simulation results are plotted as
 #'   mid-percentile and lower/upper percentile bands around.
 #' @param ... Any parameter that can be interpreted by the default [plot()] function
-#' @import hash
+#' @import hash esqlabsR
 #' @keywords internal
 plotTimeValues <- function(dataMapping, aggregated, ...) {
   validateIsOfType(dataMapping, "DataMapping")
@@ -389,7 +389,7 @@ plotTimeValues <- function(dataMapping, aggregated, ...) {
 #' @param ... Any parameter that can be interpreted by the default [plot()] function
 #'
 #' @details Observed data points are drawn on the x, simulated values on the y axis.
-#' @import ospsuite
+#' @import ospsuite esqlabsR
 #' @export
 plotPredictedVsObserved <- function(dataMapping, foldDistance = 2, timeDiffThreshold = 10, ...) {
   validateIsOfType(dataMapping, "DataMapping")
