@@ -112,12 +112,6 @@ Supported plot types are listed in the enum \code{PlotTypes}. Default is "Indivi
 \item \href{#method-DataMapping-clone}{\code{DataMapping$clone()}}
 }
 }
-\if{html}{\out{
-<details open><summary>Inherited methods</summary>
-<ul>
-</ul>
-</details>
-}}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-DataMapping-new"></a>}}
 \if{latex}{\out{\hypertarget{method-DataMapping-new}{}}}

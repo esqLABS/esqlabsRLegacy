@@ -48,6 +48,9 @@ list of supported dimensions.}
 
 \item{\code{yErrorUnit}}{Unit of y error values}
 
+\item{\code{yErrorType}}{Type of error values - either 'ArithmeticStdDev' (default)
+or 'GeometricStdDev'}
+
 \item{\code{MW}}{Molecular weight in g/mol. Required for conversion between
 molar and mass dimensions. Can be \code{NULL} (default)}
 }
@@ -67,12 +70,6 @@ molar and mass dimensions. Can be \code{NULL} (default)}
 \item \href{#method-XYData-clone}{\code{XYData$clone()}}
 }
 }
-\if{html}{\out{
-<details open><summary>Inherited methods</summary>
-<ul>
-</ul>
-</details>
-}}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-XYData-new"></a>}}
 \if{latex}{\out{\hypertarget{method-XYData-new}{}}}
@@ -164,7 +161,8 @@ It is assumed that raw yValues are in \code{yUnit}.
 \if{html}{\out{<a id="method-XYData-yErrorProcessed"></a>}}
 \if{latex}{\out{\hypertarget{method-XYData-yErrorProcessed}{}}}
 \subsection{Method \code{yErrorProcessed()}}{
-y error values with all conversions applied.
+y error values with all conversions applied. If error type is 'GeometricStdDev',
+raw error values are multiplied by processed yValues
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{XYData$yErrorProcessed(unit = NULL)}\if{html}{\out{</div>}}
 }

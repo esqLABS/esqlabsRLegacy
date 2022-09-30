@@ -48,12 +48,6 @@ is specified, the number of rows calculated to fit all the panels.}
 \item \href{#method-PlotConfiguration-print}{\code{PlotConfiguration$print()}}
 }
 }
-\if{html}{\out{
-<details open><summary>Inherited methods</summary>
-<ul>
-</ul>
-</details>
-}}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-PlotConfiguration-new"></a>}}
 \if{latex}{\out{\hypertarget{method-PlotConfiguration-new}{}}}
