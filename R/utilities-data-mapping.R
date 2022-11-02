@@ -393,6 +393,12 @@ plotTimeValues <- function(dataMapping, aggregated, ...) {
 #' @export
 plotPredictedVsObserved <- function(dataMapping, foldDistance = 2, timeDiffThreshold = 10, ...) {
   validateIsOfType(dataMapping, "DataMapping")
+
+  # Cannot create such a plot if no grouping exists
+  if (length(dataMapping$groupings) == 0){
+    stop(messages$dataMappingNoGrouping())
+  }
+
   legendEntries <- c()
   legendColors <- c()
   legendPch <- c()

@@ -53,12 +53,6 @@ recognized by the \code{col} argument of the \code{\link[=plot]{plot()}} functio
 \item \href{#method-DataMappingConfiguration-print}{\code{DataMappingConfiguration$print()}}
 }
 }
-\if{html}{\out{
-<details open><summary>Inherited methods</summary>
-<ul>
-</ul>
-</details>
-}}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-DataMappingConfiguration-new"></a>}}
 \if{latex}{\out{\hypertarget{method-DataMappingConfiguration-new}{}}}

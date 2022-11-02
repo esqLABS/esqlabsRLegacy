@@ -45,12 +45,6 @@ of three HSV values.}
 \item \href{#method-Plotable-print}{\code{Plotable$print()}}
 }
 }
-\if{html}{\out{
-<details open><summary>Inherited methods</summary>
-<ul>
-</ul>
-</details>
-}}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Plotable-new"></a>}}
 \if{latex}{\out{\hypertarget{method-Plotable-new}{}}}

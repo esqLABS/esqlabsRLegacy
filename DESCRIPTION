@@ -1,7 +1,7 @@
 Type: Package
 Package: esqlabsRLegacy
 Title: esqLABS utilities package legacy functions
-Version: 3.0.0
+Version: 3.0.1
 Authors@R: 
     c(person("esqLABS GmbH", role = c("cph", "fnd")),
       person("Pavel", "Balazki", role = c("cre", "aut"), email = "pavel.balazki@esqlabs.com"),
@@ -30,4 +30,4 @@ Config/testthat/edition: 3
 Encoding: UTF-8
 Language: en-US
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.0
+RoxygenNote: 7.2.1
