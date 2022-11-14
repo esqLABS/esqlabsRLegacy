@@ -38,12 +38,6 @@ An object storing configuration of for observed data import
 \item \href{#method-DataConfiguration-print}{\code{DataConfiguration$print()}}
 }
 }
-\if{html}{\out{
-<details open><summary>Inherited methods</summary>
-<ul>
-</ul>
-</details>
-}}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-DataConfiguration-new"></a>}}
 \if{latex}{\out{\hypertarget{method-DataConfiguration-new}{}}}

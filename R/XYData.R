@@ -165,6 +165,20 @@ XYData <- R6::R6Class(
       }
     },
 
+    #' @field yErrorType Type of error values - either 'ArithmeticStdDev' (default)
+    #' or 'GeometricStdDev'
+    yErrorType = function(value){
+      if (missing(value)) {
+        private$.yErrorType
+      } else {
+        if (!(value %in% c("ArithmeticStdDev", "GeometricStdDev"))){
+          stop("Supported error types are 'ArithmeticStdDev' and 'GeometricStdDev'.")
+        }
+
+        private$.yErrorType <- value
+      }
+    },
+
     #' @field MW Molecular weight in g/mol. Required for conversion between
     #'   molar and mass dimensions. Can be `NULL` (default)
     MW = function(value) {
@@ -186,6 +200,7 @@ XYData <- R6::R6Class(
     .yDimension = NULL,
     .yUnit = NULL,
     .yErrorUnit = NULL,
+    .yErrorType = NULL,
     .MW = NULL,
     .metaData = list()
   ),
@@ -215,6 +230,8 @@ XYData <- R6::R6Class(
 
       self$xDimension <- ospDimensions$Time
       self$yDimension <- ospDimensions$Dimensionless
+
+      private$.yErrorType <- "ArithmeticStdDev"
     },
 
     #' @description Returns the minimal value (minus error, if specified) of the y series that is not negative or null
@@ -280,7 +297,9 @@ XYData <- R6::R6Class(
     },
 
     #' @description
-    #' y error values with all conversions applied.
+    #' y error values with all conversions applied. If error type is 'GeometricStdDev',
+    #' raw error values are multiplied by processed yValues
+    #'
     #'
     #' @param unit Target unit. If `NULL` (default), the no conversion between
     #'   units is applied.
@@ -291,6 +310,10 @@ XYData <- R6::R6Class(
     yErrorProcessed = function(unit = NULL) {
       if (is.null(private$.yError)) {
         return(NULL)
+      }
+
+      if (private$.yErrorType == "GeometricStdDev"){
+        return(private$.yError * self$yValuesProcessed(unit))
       }
 
       # Add offset and multiply by the factor. The values are in the unit of XYData

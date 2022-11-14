@@ -27,3 +27,7 @@ messages$errorWrongLength <- function(object, length, optionalMessage = NULL) {
 messages$errorMultipleMetaDataEntries <- function(optionalMessage = NULL) {
   paste("Can only set a single meta data entry at once", optionalMessage)
 }
+
+messages$dataMappingNoGrouping <- function(optionalMessage = NULL) {
+  paste("No data sets are grouped in the data mapping!", optionalMessage)
+}

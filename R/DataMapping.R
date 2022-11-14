@@ -499,6 +499,10 @@ DataMapping <- R6::R6Class(
         label <- dataSet$name
         # Create a `XYData` object from `DataSet`
         xyData <- XYData$new(xVals = dataSet$xValues, yVals = dataSet$yValues, yError = dataSet$yErrorValues, label = label)
+        # Check if error type is set in the DataSet object
+        if (!is.null(dataSet$yErrorType)){
+          xyData$yErrorType <- dataSet$yErrorType
+        }
         xyData$dataType <- XYDataTypes$Observed
         xyData$MW <- dataSet$molWeight
         xyData$xDimension <- dataSet$xDimension
