@@ -1,3 +1,9 @@
+# esqlabsRLegacy 3.0.2
+
+Predicted vs observed plots respect the colors of simulated results.
+
+----
+
 # esqlabsRLegacy 3.0.1
 
 Fixes unit conversion error when trying to plot data with geometric standard 

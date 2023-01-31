@@ -470,6 +470,12 @@ plotPredictedVsObserved <- function(dataMapping, foldDistance = 2, timeDiffThres
       # Apply scaling to simulated results
       simulatedPointsX <- simulatedResult$xValuesProcessed(dataMapping$xUnit)
       simulatedPointsY <- simulatedResult$yValuesProcessed(dataMapping$yUnit)
+
+      # Setting the color to the color defined for the simulation result.
+      if (!is.null(simulatedResult$color)) {
+        colors[[graphicsParIdx]] <- simulatedResult$color
+      }
+
       # Iterate through each observed data point and find the simulated value
       # with the closest x-value.
       for (i in seq_along(dataPointsX)) {
