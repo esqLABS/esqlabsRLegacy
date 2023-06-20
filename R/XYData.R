@@ -167,11 +167,11 @@ XYData <- R6::R6Class(
 
     #' @field yErrorType Type of error values - either 'ArithmeticStdDev' (default)
     #' or 'GeometricStdDev'
-    yErrorType = function(value){
+    yErrorType = function(value) {
       if (missing(value)) {
         private$.yErrorType
       } else {
-        if (!(value %in% c("ArithmeticStdDev", "GeometricStdDev"))){
+        if (!(value %in% c("ArithmeticStdDev", "GeometricStdDev"))) {
           stop("Supported error types are 'ArithmeticStdDev' and 'GeometricStdDev'.")
         }
 
@@ -312,7 +312,7 @@ XYData <- R6::R6Class(
         return(NULL)
       }
 
-      if (private$.yErrorType == "GeometricStdDev"){
+      if (private$.yErrorType == "GeometricStdDev") {
         return(private$.yError * self$yValuesProcessed(unit))
       }
 
