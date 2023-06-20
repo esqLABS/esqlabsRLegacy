@@ -332,7 +332,6 @@ DataMapping <- R6::R6Class(
     #' @description
     #' Add new `ModelOutput` to be plotted. Line type is set to "l" (line) by default.
     addModelOutputs = function(paths, labels, simulationResults, groups = NULL, removeNA = TRUE) {
-      browser()
       # Paths are checked for correct type in ospsuite
       validateIsString(labels)
       validateIsSameLength(paths, labels)
