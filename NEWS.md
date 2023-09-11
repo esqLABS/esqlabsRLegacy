@@ -1,3 +1,8 @@
+# esqlabsRLegacy 3.0.3
+
+Fixed a bug that caused molecular weight being wrongly converted when adding 
+simulation results ti a DataMapping.
+
 # esqlabsRLegacy 3.0.2
 
 Predicted vs observed plots respect the colors of simulated results.

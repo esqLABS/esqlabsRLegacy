@@ -395,7 +395,7 @@ plotPredictedVsObserved <- function(dataMapping, foldDistance = 2, timeDiffThres
   validateIsOfType(dataMapping, "DataMapping")
 
   # Cannot create such a plot if no grouping exists
-  if (length(dataMapping$groupings) == 0){
+  if (length(dataMapping$groupings) == 0) {
     stop(messages$dataMappingNoGrouping())
   }
 
