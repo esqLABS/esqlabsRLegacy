@@ -377,7 +377,7 @@ DataMapping <- R6::R6Class(
           mw <- getParameter(path = paste(entity$parentContainer$name, "Molecular weight", sep = "|"), container = simulationResults$simulation, stopIfNotFound = F)
         }
         if (!is.null(mw)) {
-          xySeries$MW <- toDisplayUnit(quantity = mw, values = mw$value)
+          xySeries$MW <- toUnit(quantity = mw, values = mw$value, targetUnit = ospUnits$`Molecular weight`$`g/mol`)
         }
       }
 
@@ -500,7 +500,7 @@ DataMapping <- R6::R6Class(
         # Create a `XYData` object from `DataSet`
         xyData <- XYData$new(xVals = dataSet$xValues, yVals = dataSet$yValues, yError = dataSet$yErrorValues, label = label)
         # Check if error type is set in the DataSet object
-        if (!is.null(dataSet$yErrorType)){
+        if (!is.null(dataSet$yErrorType)) {
           xyData$yErrorType <- dataSet$yErrorType
         }
         xyData$dataType <- XYDataTypes$Observed
